@@ -10,20 +10,21 @@ import java.io.IOException;
 //NUNER FUNKCJI: 3
 public class ZadanieCzteryBTrzy {
     public static void main(String[] args) {
-        double tc = 1;
+        double tc = 2;
         double fs = 22.05;
         double N = (fs * tc);
         double[] tab = new double[(int) N];
         double b3 = 0;
-        for (int n = 1; n <= 50; n++) {
-            double t = n / fs;
-            double gora = Math.cos(4*Math.PI*n*t);
-            double dol = 4*n*(Math.sin(8*Math.PI*n*t)+2);
-            b3 += gora / dol;
-            tab[n] = b3;
-            System.out.println("B3 " + n + ": " + b3);
+        for(int l = 0;l<50;l++) {
+            for (int n = 1; n <= N - 1; n++) {
+                double t = n / fs;
+                double gora = Math.cos(4 * Math.PI * n * t);
+                double dol = 4 * n * (Math.sin(8 * Math.PI * n * t) + 2);
+                b3 += gora / dol;
+                tab[n] = b3;
+                System.out.println("B3 " + n + ": " + b3);
+            }
         }
-
         XYChart chart = new XYChartBuilder().width(800).height(600).title("Wykres funkcji B3").xAxisTitle("Czas").yAxisTitle("Wartość").build();
 
         XYSeries series = chart.addSeries("Wartości", null, tab);

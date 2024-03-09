@@ -10,18 +10,20 @@ import java.io.IOException;
 //NUNER FUNKCJI: 3
 public class ZadanieCzteryBJeden {
     public static void main(String[] args) {
-        double tc = 1;
+        double tc = 2;
         double fs = 22.05;
         double N = (fs * tc);
         double[] tab = new double[(int) N];
         double b1 = 0;
-        for (int n = 1; n <= 1; n++) {
-            double t = n / fs;
-            double gora = Math.cos(4*Math.PI*n*t);
-            double dol = 4*n*(Math.sin(8*Math.PI*n*t)+2);
-            b1 += gora / dol;
-            tab[n] = b1;
-            System.out.println("B1 " + n + ": " + b1);
+        for(int l = 0;l<1;l++) {
+            for (int n = 1; n <= N - 1; n++) {
+                double t = n / fs;
+                double gora = Math.cos(4 * Math.PI * n * t);
+                double dol = 4 * n * (Math.sin(8 * Math.PI * n * t) + 2);
+                b1 += gora / dol;
+                tab[n] = b1;
+                System.out.println("B1 " + n + ": " + b1);
+            }
         }
 
         XYChart chart = new XYChartBuilder().width(800).height(600).title("Wykres funkcji B1").xAxisTitle("Czas").yAxisTitle("Wartość").build();
