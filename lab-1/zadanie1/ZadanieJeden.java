@@ -8,14 +8,15 @@ import java.io.IOException;
 //NUMER FUNKCJI: 5
 public class ZadanieJeden {
  public static void main(String[] args) {
-  int tc = 11;
-  int fs = 6;
+  int tc = 1;
+  int fs = 8000;
   int N = fs*tc;
   int fi = 0;
+  int f = 2;
     double[] tab = new double[N];
-    for(int n = 0; n<=N-1;n++){
-    double t = n/fs;
-    double x = Math.sin(2*Math.PI*fs*t+fi)*Math.cos(4*Math.PI*t);
+    for(int n = 0; n<N;n++){
+    double t = (double) n / fs;
+        double x = Math.sin(2 * Math.PI * f * t * Math.cos(3 * Math.PI * t) + t * fi);
     tab[n] = x;
     System.out.println("x "+n+": "+x);
    }
@@ -46,7 +47,7 @@ public class ZadanieJeden {
 
 
      try {
-         BitmapEncoder.saveBitmap(chart, "lab-1/zadanie1/wykres.png", BitmapEncoder.BitmapFormat.PNG);
+         BitmapEncoder.saveBitmap(chart, "lab-1/zadanie1/wykresX.png", BitmapEncoder.BitmapFormat.PNG);
      } catch (IOException e) {
          e.printStackTrace();
      }

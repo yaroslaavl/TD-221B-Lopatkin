@@ -10,16 +10,17 @@ import java.io.IOException;
 //NUNER FUNKCJI: 2
 public class ZadanieDwaY {
     public static void main(String[] args) {
-        int tc = 11;
-        int fs = 6;
+        int tc = 1;
+        int fs = 8000;
         int N = fs * tc;
         int fi = 0;
         double[] tab = new double[N];
         double x = 0;
         double y = 0;
+        int f = 2;
         for (int n = 0; n <= N - 1; n++) {
-            double t = n / fs;
-            x = Math.sin(2 * Math.PI * fs * t + fi) * Math.cos(4 * Math.PI * t);
+            double t = (double) n / fs;
+            x = Math.sin(2 * Math.PI * f * t * Math.cos(3 * Math.PI * t) + t * fi);
             y = (x*Math.pow(t,3)) / 3;
             tab[n] = y;
             System.out.println("y " + n + ": " + y);

@@ -10,12 +10,12 @@ import java.io.IOException;
 //NUNER FUNKCJI: 6
 public class ZadanieTrzy {
     public static void main(String[] args) {
-        int tc = 11;
-        int fs = 6;
+        int tc = 1;
+        int fs = 8000;
         int N = fs * tc;
         double[] tab = new double[N];
         for (int n = 0; n <= N - 1; n++) {
-            double t = n / fs;
+            double t = (double) n / fs;
             if(t >= 0 && t < 1.8) {
                 double u = -0.5 * t * Math.sin(20 * Math.pow(t, 3) - 18 * Math.pow(t, 2));
                         tab[n] = u;
